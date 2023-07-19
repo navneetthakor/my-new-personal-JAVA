@@ -28,5 +28,6 @@ class pattern5 {
             // to go into the next line 
             System.out.println();
         }
+        sc.close();
     }
 }
