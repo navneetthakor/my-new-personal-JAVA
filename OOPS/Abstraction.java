@@ -1,5 +1,5 @@
 
-import java.util.*;
+// import java.util.*;
 
 abstract class Animal{
     public void walk(){
