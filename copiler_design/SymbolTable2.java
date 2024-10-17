@@ -53,6 +53,7 @@ class SymbolTableGenerator {
                     
                     ans.get(ans.size()-1).value = temp.toString().substring(1).trim();
                     index++;
+                    continue;
                 }
                 temp.delete(0, temp.toString().length());
                 
@@ -74,7 +75,7 @@ class SymbolTableGenerator {
                     localType = temp_result;
                 }
                 
-                if (localType != "" && temp_result != " " && temp_result != localType) {
+                if (localType != "" && temp_result != localType) {
                     ans.add(new SymbolTableEntry(temp_result, localType, "uninitialized"));
                 }
                 while(currstr.length() > index && ( currstr.charAt(index) == ',' || currstr.charAt(index) == ' ')) index++; // to avoid infinite loop
@@ -100,3 +101,11 @@ public class SymbolTable2 {
         }
     }
 }
+
+//output 
+// a       int     uninitialized
+// b       int     uninitialized
+// c       int     uninitialized
+// d       int     5
+// n       int     uninitialized
+// m       double  5.025
