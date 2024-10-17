@@ -72,7 +72,7 @@ class QuadratipleGenerator {
 public class Quadratiple {
     public static void main(String[] args) {
         QuadratipleGenerator parser = new QuadratipleGenerator();
-        String postfix = "ab+c*";
+        String postfix = "ab*cd*+";
 
         ArrayList<QuadratipleEntry> ans = parser.solve(postfix);
 
