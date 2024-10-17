@@ -31,13 +31,14 @@ class QuadratipleGenerator {
     }
 
     private String symolGenerator(){
-        return ("t" + this.count);
+        return ("t" + this.count++);
     }
 
     public ArrayList<QuadratipleEntry> solve(String postfix){
 
-        // clear stack first 
-        st.clear();
+        // reset datapoints
+        this.st.clear();
+        this.count = 0;
 
         // required data structures 
         ArrayList<QuadratipleEntry> ans = new ArrayList<>();
@@ -50,7 +51,7 @@ class QuadratipleGenerator {
 
         for(Character ch : postfix.toCharArray()){
             if(!lookup.contains(ch)){
-                st.add(Character.toString(ch));
+                this.st.add(Character.toString(ch));
                 continue;
             }
 
@@ -60,7 +61,7 @@ class QuadratipleGenerator {
 
             // adding in data structure 
             ans.add(new QuadratipleEntry(Character.toString(ch), arg1, arg2, temp_result));
-            st.push(temp_result);
+            this.st.push(temp_result);
             
         }
 
